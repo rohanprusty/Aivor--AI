@@ -1,8 +1,18 @@
 import mongoose from "mongoose";
 
 const connectDB = async () => {
-  mongoose.connection.on("connected", () => console.log("Database Connected"));
-  await mongoose.connect(`${process.env.MONGODB_URI}/imagify`);
+  try {
+    mongoose.connection.on("connected", () =>
+      console.log("Database Connected")
+    );
+
+    await mongoose.connect(process.env.MONGODB_URI, {
+      dbName: "aivor_ai",
+    });
+  } catch (error) {
+    console.error("MongoDB connection error:", error.message);
+    process.exit(1);
+  }
 };
 
 export default connectDB;
