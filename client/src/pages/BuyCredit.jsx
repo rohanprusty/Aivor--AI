@@ -1,54 +1,39 @@
 import React, { useContext } from "react";
-import { assets, plans } from "../assets/assets";
 import { AppContext } from "../context/AppContext";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+import Pricing from "../components/pricing/Pricing";
+import BackgroundAnimation from "../components/layout/BackgroundAnimation";
 
 const BuyCredit = () => {
   const { user, setShowLogin } = useContext(AppContext);
 
-  const handleOnClick = ()=>{
-    if (!user) {
-      setShowLogin(true)
-    }
-  }
-
   return (
-    <motion.div
-      initial={{ opacity: 0.2, y: 100 }}
-      transition={{ duration: 1 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="min-h-[80vh] text-center pt-14 mb-10"
-    >
-      <button className="border border-gray-400 px-10 py-2 rounded-full mb-6">
-        Our Plans
-      </button>
-      <h1 className="text-center text-4xl font-medium mb-6 sm:mb-10">
-        Choose the plan
-      </h1>
-      <div className="flex flex-wrap justify-center gap-6 text-left">
-        {plans.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white drop-shadow-sm border rounded-lg py-12 px-8 text-gray-600 hover:scale-105 transition-all duration-500"
-          >
-            <img width={40} src={assets.logo_icon} />
-            <p className="mt-3 mb-1 font-semibold">{item.id}</p>
-            <p className="text-sm">{item.desc}</p>
-            <p className="mt-6">
-              <span className="text-3xl font-medium">Rs. {item.price}</span> /{" "}
-              {item.credits} credits
-            </p>
-            <button
-              onClick={handleOnClick}
-              className="w-full bg-gray-800 text-white mt-8 text-sm rounded-md py-2.5 min-w-52"
-            >
-              {user ? "Purchase" : "Get Started"}
-            </button>
+    <div className="relative min-h-screen text-gray-100 font-sans mt-20 pb-20 overflow-hidden">
+      {/* Absolute Background because BuyCredit is mounted alongside Navbar and Footer */}
+      <BackgroundAnimation />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-10">
+        <motion.div
+           initial={{ opacity: 0, y: 30 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.5 }}
+           className="text-center mb-10"
+        >
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/5 backdrop-blur-sm mb-6">
+            <span className="text-xs font-bold tracking-widest text-[#a855f7] uppercase">
+              SELECT PLAN
+            </span>
           </div>
-        ))}
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+            Choose the <span className="gradient-text gradient-text-purple">Right Plan</span>
+          </h1>
+          <p className="text-gray-400 text-lg">
+            Unlock the full potential of AVIOR AI with our premium subscriptions.
+          </p>
+        </motion.div>
+        
+        <Pricing />
       </div>
-    </motion.div>
+    </div>
   );
 };
 

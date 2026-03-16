@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { assets } from "../assets/assets";
+import { assets } from "../../assets/assets";
 import { motion } from "motion/react";
 import { delay } from "motion";
-import { AppContext } from "../context/AppContext";
+import { AppContext } from "../../context/AppContext";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -92,7 +92,7 @@ const Header = () => {
         transition={{ delay: 1.2, duration: 0.8 }}
         className="mt-2 text-neutral-600"
       >
-        Generated images from Imagify
+        Generated images from AVIOR-AI
       </motion.p>
     </motion.div>
   );

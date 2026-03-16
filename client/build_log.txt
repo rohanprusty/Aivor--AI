@@ -1,0 +1,30 @@
+
+> imagify---react@0.0.0 build
+> vite build
+
+[36mvite v6.0.5 [32mbuilding for production...[36m[39m
+transforming...
+Browserslist: browsers data (caniuse-lite) is 15 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+[32m✓[39m 2205 modules transformed.
+[31mx[39m Build failed in 7.15s
+[31merror during build:
+[31m../../../../../../../../C:/Users/rohan kumar prusty/Documents/My files/Desktop/AIVOR-AI/client/src/components/Astronaut.jsx (1:9): "DotLottieReact" is not exported by "../../../../../../../../C:/Users/rohan kumar prusty/Documents/My files/Desktop/AIVOR-AI/client/node_modules/@dotlottie/react-player/dist/index.js", imported by "../../../../../../../../C:/Users/rohan kumar prusty/Documents/My files/Desktop/AIVOR-AI/client/src/components/Astronaut.jsx".[31m
+file: [36mC:/Users/rohan kumar prusty/Documents/My files/Desktop/AIVOR-AI/client/src/components/Astronaut.jsx:1:9[31m
+[33m
+1: import { DotLottieReact } from '@dotlottie/react-player';
+            ^
+2: 
+3: const Astronaut = () => {
+[31m
+    at getRollupError (file:///c:/Users/rohan%20kumar%20prusty/Documents/My%20files/Desktop/AIVOR-AI/client/node_modules/rollup/dist/es/shared/parseAst.js:396:41)
+    at error (file:///c:/Users/rohan%20kumar%20prusty/Documents/My%20files/Desktop/AIVOR-AI/client/node_modules/rollup/dist/es/shared/parseAst.js:392:42)
+    at Module.error (file:///c:/Users/rohan%20kumar%20prusty/Documents/My%20files/Desktop/AIVOR-AI/client/node_modules/rollup/dist/es/shared/node-entry.js:15645:16)
+    at Module.traceVariable (file:///c:/Users/rohan%20kumar%20prusty/Documents/My%20files/Desktop/AIVOR-AI/client/node_modules/rollup/dist/es/shared/node-entry.js:16094:29)
+    at ModuleScope.findVariable (file:///c:/Users/rohan%20kumar%20prusty/Documents/My%20files/Desktop/AIVOR-AI/client/node_modules/rollup/dist/es/shared/node-entry.js:13877:39)
+    at ReturnValueScope.findVariable (file:///c:/Users/rohan%20kumar%20prusty/Documents/My%20files/Desktop/AIVOR-AI/client/node_modules/rollup/dist/es/shared/node-entry.js:5306:38)
+    at FunctionBodyScope.findVariable (file:///c:/Users/rohan%20kumar%20prusty/Documents/My%20files/Desktop/AIVOR-AI/client/node_modules/rollup/dist/es/shared/node-entry.js:5306:38)
+    at Identifier.bind (file:///c:/Users/rohan%20kumar%20prusty/Documents/My%20files/Desktop/AIVOR-AI/client/node_modules/rollup/dist/es/shared/node-entry.js:5089:40)
+    at CallExpression.bind (file:///c:/Users/rohan%20kumar%20prusty/Documents/My%20files/Desktop/AIVOR-AI/client/node_modules/rollup/dist/es/shared/node-entry.js:2672:28)
+    at CallExpression.bind (file:///c:/Users/rohan%20kumar%20prusty/Documents/My%20files/Desktop/AIVOR-AI/client/node_modules/rollup/dist/es/shared/node-entry.js:11313:15)[39m
